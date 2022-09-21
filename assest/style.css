@@ -1,0 +1,20 @@
+:root {
+    --font-header: 
+    --font-body: 
+    --color-primary: #351C75;
+    --color-secondary: #BD60E7;   
+}
+
+/* ===== Text Color ===== */
+
+.color-text-primary {
+    color: var(--color-primary);
+}
+
+.color-text-secondary {
+    color: var(--color-secondary);
+}
+
+
+@media (max-width: 992px) {
+}
