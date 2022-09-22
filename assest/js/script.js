@@ -1,39 +1,41 @@
 var nextBtn = document.querySelector('button');
 var h3El = document.querySelector('h3');
+var pEl = document.getElementById('p');
 
 
 var index = 0
 
 var questionList = [
     {
-        question:   "Comm",
-        correct: 
-        choices: [1,2,3,4]
+        question:   "Commonly used data types DO Not Include:",
+        correct: 'alerts',
+        choices: ['strings','booleans','alerts','numbers']
     },
     {
-        question:
-        correct:
-        choices: [1,2,3,4]
+        question: "The condition in an if / else statement is enclosed with _____.",
+        correct:  'parenthesis',
+        choices: ['quotes','curly brackets','parenthesis','square brackets']
     },
     {
-        question:
-        correct:
-        choices: [1,2,3,4]
+        question: "Arrays in Javascript can be used to store _______",
+        correct: 'all of the above',
+        choices: ['number and strings','other arrays','boolans','all of the above']
     },
     {
-        question:
-        correct:
-        choices: [1,2,3,4]
+        question: "String values must be enclosed within ____ when being assigned to variables.",
+        correct: 'quotes',
+        choices: ['commas','curly brackets','quotes','paraenthesis']
     }
 ]
 
 
 function renderQuestion(){
     h3El.innerText = questionList[index].question;
-    choice.innerHTML = "";
-    for (var i = 0; i < question[index].length; i++){
+     questionList[index].choices.innerHTML = " ";
+   console.log(questionList[index].choices)
+    for (var i = 0; i < questionList[index].choices; i++){
         var li = document.createElement('li')
-        li.innerText = question.choices[i];
+        li.innerText = questionList.choices[i];
         btn.appendChild(li);
     }
 }
