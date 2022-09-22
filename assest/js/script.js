@@ -1,9 +1,13 @@
 var nextBtn = document.querySelector('button');
 var h3El = document.querySelector('h3');
-var pEl = document.getElementById('p');
+var pEl = document.querySelector('.body');
+var section = document.getElementById('section');
+var time = document.querySelector('.time');
 
-
-var index = 0
+//Count Down Variables
+var countDown
+var timeLeft = 75
+var index = -1;
 
 var questionList = [
     {
@@ -31,18 +35,39 @@ var questionList = [
 
 function renderQuestion(){
     h3El.innerText = questionList[index].question;
-     questionList[index].choices.innerHTML = " ";
-   console.log(questionList[index].choices)
+    //choices.innerHTML = " ";
     for (var i = 0; i < questionList[index].choices; i++){
-        var li = document.createElement('li')
-        li.innerText = questionList.choices[i];
-        btn.appendChild(li);
+        console.log(questionList[index].choices[i])
+        var li = document.createElement('li');
+        li.innerText = questionList[index].choices[i];
+        li.appendChild(li);
     }
 }
 
+function startCountDown(){
+    clearInterval(countDown)
+    countDown =  setInterval(function() {
+        timeLeft --
+        time.textContent = timeLeft
+        if (timeLeft === 0){
+        clearInterval(countDown);
+        h3El.innerText = ("Game Over");
+        pEl.innerText = ('Your Score was: ');
+        }
+    }, 1000);
+}
+
+
+
 nextBtn.addEventListener('click', function(){
+    section.removeChild(pEl)
+    section.removeChild(nextBtn)
     index ++
+    startCountDown()
     renderQuestion()
+    
+    
+
 })
 
 
