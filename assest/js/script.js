@@ -3,6 +3,7 @@ var h3El = document.querySelector('h3');
 var pEl = document.querySelector('.body');
 var section = document.getElementById('section');
 var time = document.querySelector('.time');
+var ulEL = document.querySelector('ul')
 
 //Count Down Variables
 var countDown
@@ -36,11 +37,11 @@ var questionList = [
 function renderQuestion(){
     h3El.innerText = questionList[index].question;
     //choices.innerHTML = " ";
-    console.log(questionList[index].choices)
-    for (var i = 0; i < questionList[index].choices; i++){   
+   
+    for (var i = 0; i < questionList[index].choices.length; i++){ 
         var li = document.createElement('li');
         li.innerText = questionList[index].choices[i];
-        li.appendChild(li);
+        li.appendChild(ulEL);
     }
 }
 
