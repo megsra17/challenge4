@@ -5,6 +5,8 @@ var section = document.getElementById('section');
 var time = document.querySelector('.time');
 var ulEL = document.querySelector('ul')
 
+
+var score = 0
 //Count Down Variables
 var countDown
 var timeLeft = 75
@@ -33,7 +35,6 @@ var questionList = [
     }
 ]
 
-
 function renderQuestion(){
     h3El.innerText = questionList[index].question;
     questionList[index].choices.innerHTML = " ";
@@ -45,10 +46,20 @@ function renderQuestion(){
     }
 }
 
+function guessedAnswer(){
+    if ( === questionList.correct){
+        score++
+    } else{
+        timeLeft -= 10;
+        time.textContent = timeLeft;
+    }
+    renderQuestion()++;
+}
+
 function GameOver(){
     clearInterval(countDown);
         h3El.innerText = ("Game Over");
-        pEl.innerText = ('Your Score was: ');
+        pEl.innerText = ('Your Score was: ' + score);
 }
 
 function startCountDown(){
