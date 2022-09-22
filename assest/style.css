@@ -5,14 +5,33 @@
     --color-secondary: #BD60E7;   
 }
 
-/* ===== Text Color ===== */
+/* ===== Background Color ===== */
 
-.color-text-primary {
-    color: var(--color-primary);
+.color-bg-primary {
+    background: var(--color-primary);
 }
 
-.color-text-secondary {
-    color: var(--color-secondary);
+.color-bg-secondary {
+    background: var(--color-secondary);
+}
+
+
+
+/* Button Class */
+
+button {
+    background-color: #351C75;
+    color: white;
+    border: solid 1px #351C75;
+    border-radius: 5px;
+    padding: 8px;
+    margin-right: 5px;
+}
+
+button:hover {
+    background: var(--color-secondary);
+    border: solid 1px  var(--color-secondary);
+    color: white;
 }
 
 

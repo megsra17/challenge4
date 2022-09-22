@@ -36,12 +36,12 @@ var questionList = [
 
 function renderQuestion(){
     h3El.innerText = questionList[index].question;
-    //choices.innerHTML = " ";
-   
+    questionList[index].choices.innerHTML = " ";
     for (var i = 0; i < questionList[index].choices.length; i++){ 
-        var li = document.createElement('li');
+        var li = document.createElement('button');
         li.innerText = questionList[index].choices[i];
-        li.appendChild(ulEL);
+        console.log(li.innerText = questionList[index].choices[i])
+        ulEL.appendChild(li);
     }
 }
 
@@ -67,7 +67,7 @@ function startCountDown(){
 
 nextBtn.addEventListener('click', function(){
     //section.removeChild(pEl)
-   // section.removeChild(nextBtn)
+   //section.removeChild(nextBtn)
     index ++
     startCountDown()
     renderQuestion()
