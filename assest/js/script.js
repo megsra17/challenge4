@@ -36,12 +36,18 @@ var questionList = [
 function renderQuestion(){
     h3El.innerText = questionList[index].question;
     //choices.innerHTML = " ";
-    for (var i = 0; i < questionList[index].choices; i++){
-        console.log(questionList[index].choices[i])
+    console.log(questionList[index].choices)
+    for (var i = 0; i < questionList[index].choices; i++){   
         var li = document.createElement('li');
         li.innerText = questionList[index].choices[i];
         li.appendChild(li);
     }
+}
+
+function GameOver(){
+    clearInterval(countDown);
+        h3El.innerText = ("Game Over");
+        pEl.innerText = ('Your Score was: ');
 }
 
 function startCountDown(){
@@ -50,9 +56,8 @@ function startCountDown(){
         timeLeft --
         time.textContent = timeLeft
         if (timeLeft === 0){
-        clearInterval(countDown);
-        h3El.innerText = ("Game Over");
-        pEl.innerText = ('Your Score was: ');
+            clearInterval(countDown);
+            GameOver();
         }
     }, 1000);
 }
@@ -60,8 +65,8 @@ function startCountDown(){
 
 
 nextBtn.addEventListener('click', function(){
-    section.removeChild(pEl)
-    section.removeChild(nextBtn)
+    //section.removeChild(pEl)
+   // section.removeChild(nextBtn)
     index ++
     startCountDown()
     renderQuestion()
@@ -71,7 +76,6 @@ nextBtn.addEventListener('click', function(){
 })
 
 
-// GIVEN I am taking a code quiz
 // WHEN I click the start button
 // THEN a timer starts and I am presented with a question
 // WHEN I answer a question
