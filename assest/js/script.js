@@ -47,7 +47,7 @@ function renderQuestion(){
 }
 
 function guessedAnswer(){
-    if ( === questionList.correct){
+    if ( === questionList[index].correct){
         score++
     } else{
         timeLeft -= 10;
