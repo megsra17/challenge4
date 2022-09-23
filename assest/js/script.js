@@ -68,7 +68,6 @@ function guessedAnswer(event){
     index++
    renderQuestion()
 }
-
 //game over screen
 function GameOver(){
     clearInterval(countDown);
@@ -77,7 +76,6 @@ function GameOver(){
         section.appendChild(pEl)
         pEl.innerText = ('Your Score was: ' + score);
         var form = document.createElement('form');
-        form.setAttribute('method',"post");
         var input = document.createElement('input');
         input.setAttribute('type', 'text');
         input.setAttribute('id', 'initials')
