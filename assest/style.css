@@ -33,6 +33,27 @@ button:hover {
     border: solid 1px  var(--color-secondary);
     color: white;
 }
+/* Input */
+
+input#initials {
+    padding: 8px;
+    margin-right: 10px;
+}
+
+input[type="submit"] {
+  background-color: #351C75;
+    color: white;
+    border: solid 1px var(--color-primary);
+    border-radius: 5px;
+    padding: 8px;
+    margin-right: 10px;  
+}
+
+input[type="submit"]:hover {
+  background: var(--color-secondary);
+    border: solid 1px  var(--color-secondary);
+    color: white; 
+}
 
 /* High score */
 

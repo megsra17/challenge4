@@ -2,7 +2,7 @@ var nextBtn = document.querySelector('button');
 var h3El = document.querySelector('h3');
 var pEl = document.querySelector('.body');
 var section = document.getElementById('section');
-var header = document.getElementById('header');
+var header = document.querySelector('#header');
 var time = document.querySelector('.time');
 var ulEL = document.querySelector('ul')
 
@@ -86,19 +86,33 @@ function GameOver(){
         form.appendChild(input);
         form.appendChild(submit);
         section.appendChild(form);
-        var inputInitials = document.getElementById('initials')
-        localStorage.setItem("initials", inputInitials.value);
-        console.log(localStorage.setItem("iniitals", inputInitials.value))
-        console.log(localStorage.getItem("initials"))
+        
         
         submit.addEventListener('click', function(event){
             event.preventDefault();
+            form.setAttribute("style", "display:none;")
+            header.setAttribute("style", "display: none;");
             h3El.innerText = ("High Scores");
-            section.removeChild(form)
-            console.log(localStorage.getItem("initials"))
-            var highScore = localStorage.getItem("initials")
-            pEl.innertext = ("High Score" + highScore + score);
+            var inputInitials = document.getElementById('initials')
+            localStorage.setItem("initials", inputInitials.value);
+            localStorage.setItem("score", score)
+            var finalScore = localStorage.getItem('score')
+            var highScore = localStorage.getItem("initials");
+            pEl.innerText = ("High Score: " + highScore + " " + finalScore);
+            var restartButton = document.createElement('button');
+            var clearButton = document.createElement('button');
+            section.appendChild(restartButton);
+            section.appendChild(clearButton);
+            restartButton.textContent = ("Restart");
+            clearButton.textContent = ('Clear High Score');
 
+            restartButton.addEventListener('click', function(){
+                location.reload();
+            })
+
+            clearButton.addEventListener('click', function(){
+              localStorage.clear();  
+            })
         })
 }
 
