@@ -26,6 +26,7 @@ button {
     border-radius: 5px;
     padding: 8px;
     margin-right: 5px;
+    margin-bottom: 30px;
 }
 
 button:hover {
@@ -55,6 +56,37 @@ input[type="submit"]:hover {
     color: white; 
 }
 
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 20px;
+}
+
+header p {
+    font-weight: bold;
+    font-size: 50px;
+}
+
+/* Body */
+section#section {
+    text-align: center;
+    margin: 150px auto 0;
+    max-width: 1220px;
+    border: solid 2px var(--color-secondary);
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+h3 {
+    margin-top: 30px;
+}
+
+form {
+    margin-bottom: 30px;
+}
+
+
 /* High score */
 
 .high-score {
@@ -64,3 +96,5 @@ input[type="submit"]:hover {
 
 @media (max-width: 992px) {
 }
+
+
