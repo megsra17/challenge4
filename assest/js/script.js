@@ -51,13 +51,7 @@ function renderQuestion(){
 
 //answers
 function guessedAnswer(event){   
-    //if no questions left
-     if(!questionList[index]){
-        score = timeLeft;
-        GameOver()
-    }else{
-        
-    }
+    
     //checks anwser
      if ( event.target.innerText === questionList[index].correct){
         score++
@@ -66,7 +60,16 @@ function guessedAnswer(event){
         time.textContent = timeLeft;
     }
     index++
-   renderQuestion()
+
+    //if no questions left
+     if(!questionList[index]){
+        score = timeLeft;
+        GameOver()
+    }else{
+        renderQuestion()
+    }
+    
+   
 }
 //game over screen
 function GameOver(){
