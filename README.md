@@ -18,7 +18,7 @@ THEN I can save my initials and score
 HTML CSS JavaScript
 
 ## Screenshot
-![This is an image of my project](https://github.com/megsra17/challange1/blob/main/assets/images/Screen%20Shot%202022-09-01%20at%203.29.51%20PM.png)
+![This is an image of my project](https://user-images.githubusercontent.com/108164966/190917997-e579e338-3a6b-4c5f-9fb7-75a96d39e264.png)
 
 ## Url Link
 [Challange 4](https://megsra17.github.io/challenge4/)
